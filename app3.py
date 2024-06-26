@@ -6,6 +6,10 @@ import asyncio
 app = Flask(__name__)
 CORS(app)
 
+@app.route('/')
+def index():
+    return "Hello, World!"
+
 @app.route('/tts', methods=['POST'])
 def tts():
     async def async_tts(text, filename):
